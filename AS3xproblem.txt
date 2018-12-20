@@ -1,0 +1,19 @@
+1.question one:
+ 
+Error:Execution failed for task ':app:transformClassesWithJarMergingForDebug'.
+
+
+com.android.build.api.transform.TransformException: java.util.zip.ZipException: duplicate entry: okhttp3/internal/ws/RealWebSocket$1.class
+
+answer:
+总结就是把版本统一，但是具体的都不知道怎么办，因为是React Native和Android里面的冲突了....无奈.....
+
+但是，不要着急，
+人家React Native早就发现这个问题啦，他们在github上已经提出解决方法了！！撒花，
+连接如下https://github.com/facebook/react-native/issues/12646
+
+2. non-zero exit value 1； non-zero exit value 2； non-zero exit value 3
+  
+  这个是因为依赖包重复了 （像v4和nineoldandroids），如图。app中实现了对easeUI的依赖，但是app和easeUI都添加了对这个包的依赖。
+所以就报这个错误，修改之后再报，就clean，rebuild一下
+  https://blog.csdn.net/lxk_1993/article/details/50511172
